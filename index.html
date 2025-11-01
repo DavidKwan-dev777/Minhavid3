@@ -29,17 +29,17 @@
     .container-wrapper {
       display: flex;
       justify-content: center;
-      overflow-x: auto; /* permite rolagem horizontal em telas pequenas */
+      overflow-x: auto;
       padding: 0 10px;
       margin-top: 30px;
     }
 
     .container {
       display: flex;
-      flex-direction: row; /* sempre lado a lado */
+      flex-direction: row;
       align-items: center;
       gap: 20px;
-      flex-shrink: 0; /* não encolhe para caber na tela */
+      flex-shrink: 0;
     }
 
     .container img {
@@ -56,14 +56,14 @@
       position: relative;
       box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
       max-width: 300px;
-      white-space: nowrap; /* mantém o texto em uma linha se necessário */
+      white-space: nowrap;
     }
 
     .dialogo::after {
       content: "";
       position: absolute;
       top: 50%;
-      left: -15px; /* aponta para o Minion */
+      left: -15px;
       transform: translateY(-50%);
       border-width: 10px;
       border-style: solid;
@@ -76,11 +76,13 @@
       margin-top: 40px;
     }
 
-    video {
+    .video-container iframe {
       width: 80%;
       max-width: 720px;
+      aspect-ratio: 16 / 9;
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: none;
     }
   </style>
 </head>
@@ -92,15 +94,18 @@
   <div class="container-wrapper">
     <div class="container">
       <img src="primeiro_minion.png" alt="Minion fofo">
-      <div class="dialogo">Vamos animar esse clima!</div>
+      <div class="dialogo">Fique animada, minha vida!</div>
     </div>
   </div>
 
   <div class="video-container">
-    <video controls autoplay>
-      <source src="Pharrell Williams - Happy (Official Video).mp4" type="video/mp4">
-      Seu navegador não suporta vídeos HTML5.
-    </video>
+    <iframe 
+      src="https://www.youtube.com/embed/ZbZSe6N_BXs?autoplay=0&rel=0" 
+      title="YouTube video player" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
   </div>
 </body>
 </html>
+
